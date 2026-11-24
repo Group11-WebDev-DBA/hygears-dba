@@ -1,0 +1,43 @@
+<?php
+// Shared top of every page. Before including it, a page sets:
+//   $pageTitle  = "News";      (shown in the browser tab)
+//   $activePage = "news";      (highlights that link in the nav)
+if (!isset($pageTitle)) { $pageTitle = "PUP Hygears"; }
+if (!isset($activePage)) { $activePage = ""; }
+
+// Prints one nav link, marked as current when it's the active page
+function navLink($key, $href, $label, $activePage) {
+  $current = ($key == $activePage) ? ' aria-current="page"' : "";
+  echo "<li><a href='$href'$current>$label</a></li>";
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><?php echo htmlspecialchars($pageTitle); ?> | Hygears HQ</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.php">
+      <img src="assets/img/hygears-logo.png" alt="" width="36" height="36">
+      <span>Hygears HQ</span>
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        <?php
+        navLink("kiosk", "index.php", "Kiosk", $activePage);
+        navLink("dashboard", "dashboard.php", "Dashboard", $activePage);
+        navLink("attendance", "attendance.php", "Attendance", $activePage);
+        navLink("people", "people.php", "People", $activePage);
+        navLink("items", "items.php", "Items", $activePage);
+        navLink("requests", "requests.php", "Requests", $activePage);
+        navLink("reports", "reports.php", "Reports", $activePage);
+        navLink("settings", "settings.php", "Settings", $activePage);
+        ?>
+      </ul>
+    </nav>
+  </header>
+  <main class="container">
