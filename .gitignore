@@ -1,10 +1,6 @@
 # Local settings with database passwords: copy config.example.php instead
 app/config.php
 
-# Files uploaded while testing (the folder itself is kept)
-app/uploads/*
-!app/uploads/.gitkeep
-
 # Editor and OS files
 .vscode/
 .idea/

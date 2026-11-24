@@ -25,11 +25,10 @@ hygears-dba/
 │   ├── hygears.sql        Full schema (tables, triggers, views, lookups)
 │   ├── seeds/             Sample data
 │   ├── queries/           Report queries for the paper
-│   ├── tests/             Business-rule tests
-│   └── migrations/        Numbered changes once real data exists
+│   └── tests/             Business-rule tests
 ├── app/                   The HQ system in PHP (kiosk, dashboard, requests...)
 ├── docs/                  ERD, business rules, paper notes
-└── .github/               Pull request and issue templates
+└── .github/               Pull request checklist
 ```
 
 ## What the database enforces
